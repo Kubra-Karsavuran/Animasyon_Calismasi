@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animasyon_ornegi</title>
+</head>
+<body>
+ 
+<div id="top_1" style="position: absolute;" ></div>
+<div id="top_2" style="position: absolute;" ></div>
+<div id="top_3" style="position: absolute;" ></div>
+<div id="top_4" style="position: absolute;"></div>
+
+<script type="text/javascript">
+
+	//top - 1  un style kodları
+
+	var box=document.getElementById('top_1');
+
+	box.style.width="120px";
+	box.style.height="120px";
+	box.style.position="absolute";
+	box.style.top="300px";
+	box.style.left="60px";
+	box.style.borderRadius="150px";
+	box.style.backgroundImage="url(img_1.jpg)";
+
+	var yukariDon=false;
+	var solaDon=false;
+
+	// top - 2 un style kodları
+
+	var box_2=document.getElementById('top_2');
+
+	box_2.style.width="120px";
+	box_2.style.height="120px";
+	box_2.style.position="absolute";
+	box_2.style.top="400px";
+	box_2.style.left="500px";
+	box_2.style.borderRadius="150px";
+	box_2.style.backgroundImage="url(img_2.jpg)";
+
+	var yukariDon_2=false;
+	var solaDon_2=false;
+
+	// top - 3 un style kodları
+
+	var box_3=document.getElementById('top_3');
+
+	box_3.style.width="120px";
+	box_3.style.height="120px";
+	box_3.style.position="absolute";
+	box_3.style.top="300px";
+	box_3.style.left="900px";
+	box_3.style.borderRadius="150px";
+	box_3.style.backgroundImage="url(img_3.jpg)";
+
+	var yukariDon_3=false;
+	var solaDon_3=false;
+
+	// top - 4 un style kodları
+
+	var box_4=document.getElementById('top_4');
+
+	box_4.style.width="120px";
+	box_4.style.height="120px";
+	box_4.style.top="1px";
+	box_4.style.left="10px";
+	box_4.style.borderRadius="150px";
+	box_4.style.backgroundImage="url(img_4.jpg)";
+
+
+	var yukariDon_4=false;
+	var solaDon_4=false;
+
+	function animasyon(box, top, left)
+	{
+
+		var ustkonum=Number(box.style.top.split("px")[0]); 
+		var solkonum=Number(box.style.left.split("px")[0]);
+
+        
+		if (ustkonum >= ( (window.innerHeight) - Number(box.style.height.split("px")[0]))) 
+		{
+			yukariDon=true;
+		}
+		else if(ustkonum <= 0) 
+		{
+			yukariDon=false;
+		}
+
+		box.style.top=(ustkonum+top).toString()+"px";
+
+		if (solkonum >= ( (window.innerWidth) - Number(box.style.width.split("px")[0]))) 
+		{
+			solaDon=true;
+		}
+		else if (solkonum<=0) 
+		{
+			solaDon=false;
+		}
+
+		box.style.left=(solkonum+left).toString()+"px"; 
+	}
+
+
+	setInterval(function()
+	{
+		if (yukariDon==true && solaDon==true ) 
+		{
+			animasyon(box,-1,-1);
+		}
+		else if(yukariDon==false && solaDon==true)
+		{
+			animasyon(box,1,-1);
+		}
+		else if(yukariDon==true && solaDon==false)
+		{
+			animasyon(box,-1,1);
+		}
+		else if(yukariDon==false && solaDon==false)
+		{
+			animasyon(box,1,1);
+		}
+        
+	},2);
+
+
+// top 2 kodları
+
+	function animasyon_2(box_2, top, left)
+	{
+
+		var ustkonum=Number(box_2.style.top.split("px")[0]); 
+		var solkonum=Number(box_2.style.left.split("px")[0]);
+
+		if (ustkonum >= ( (window.innerHeight) - Number(box_2.style.height.split("px")[0]))) 
+		{
+			yukariDon_2=true;
+		}
+		else if(ustkonum <= 0) 
+		{
+			yukariDon_2=false;
+		}
+
+		box_2.style.top=(ustkonum+top).toString()+"px"; 
+
+		if (solkonum >= ( (window.innerWidth) - Number(box_2.style.width.split("px")[0]))) 
+		{
+			solaDon_2=true;
+		}
+		else if (solkonum<=0) 
+		{
+			solaDon_2=false;
+		}
+
+		box_2.style.left=(solkonum+left).toString()+"px";  
+	}
+
+	setInterval(function()
+	{
+		if (yukariDon_2==true && solaDon_2==true ) 
+		{
+			animasyon_2(box_2,-1,-1);
+		}
+		else if(yukariDon_2==false && solaDon_2==true)
+		{
+			animasyon_2(box_2,1,-1);
+		}
+		else if(yukariDon_2==true && solaDon_2==false)
+		{
+			animasyon_2(box_2,-1,1);
+		}
+		else if(yukariDon_2==false && solaDon_2==false)
+		{
+			animasyon_2(box_2,1,1);
+		}
+        
+	},2);
+
+
+// top 3 kodları
+
+
+	function animasyon_3(box_3, top, left)
+	{
+
+		var ustkonum=Number(box_3.style.top.split("px")[0]); 
+		var solkonum=Number(box_3.style.left.split("px")[0]);
+
+		if (ustkonum >= ( (window.innerHeight) - Number(box_3.style.height.split("px")[0])))
+		{
+			yukariDon_3=true;
+		}
+		else if(ustkonum <= 0) 
+		{
+			yukariDon_3=false;
+		}
+
+		box_3.style.top=(ustkonum+top).toString()+"px";
+
+		if (solkonum >= ( (window.innerWidth) - Number(box_3.style.width.split("px")[0]))) 
+		{
+			solaDon_3=true;
+		}
+		else if (solkonum<=0) 
+		{
+			solaDon_3=false;
+		}
+
+		box_3.style.left=(solkonum+left).toString()+"px"; 
+	}
+
+
+	setInterval(function()
+	{
+		if (yukariDon_3==true && solaDon_3==true ) 
+		{
+			animasyon_3(box_3,-1,-1);
+		}
+		else if(yukariDon_3==false && solaDon_3==true)
+		{
+			animasyon_3(box_3,1,-1);
+		}
+		else if(yukariDon_3==true && solaDon_3==false)
+		{
+			animasyon_3(box_3,-1,1);
+		}
+		else if(yukariDon_3==false && solaDon_3==false)
+		{
+			animasyon_3(box_3,1,1);
+		}
+        
+	},2);
+
+
+// top 4 kodları
+
+	function animasyon_4(box_4, top, left)
+	{
+
+		var ustkonum=Number(box_4.style.top.split("px")[0]);
+		var solkonum=Number(box_4.style.left.split("px")[0]);
+
+        
+		if (ustkonum >= ( (window.innerHeight) - Number(box_4.style.height.split("px")[0]))) 
+		{
+			yukariDon_4=true;
+		}
+		else if(ustkonum <= 0) 
+		{
+			yukariDon_4=false;
+		}
+
+		box_4.style.top=(ustkonum+top).toString()+"px";
+
+		if (solkonum >= ( (window.innerWidth) - Number(box_4.style.width.split("px")[0]))) 
+		{
+			solaDon_4=true;
+		}
+		else if (solkonum<=0) 
+		{
+			solaDon_4=false;
+		}
+
+		box_4.style.left=(solkonum+left).toString()+"px";
+	}
+
+
+	setInterval(function()
+	{
+		if (yukariDon_4==true && solaDon_4==true ) 
+		{
+			animasyon_4(box_4,-1,-1);
+		}
+		else if(yukariDon_4==false && solaDon_4==true)
+		{
+			animasyon_4(box_4,1,-1);
+		}
+		else if(yukariDon_4==true && solaDon_4==false)
+		{
+			animasyon_4(box_4,-1,1);
+		}
+		else if(yukariDon_4==false && solaDon_4==false)
+		{
+			animasyon_4(box_4,1,1);
+		}
+        
+	},2);
+
+</script>
+
+</body>
+</html>
